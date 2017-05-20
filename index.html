@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+
+		<title></title>
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/common.css" />
+
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+
+	<body>
+		<noscript unselectable="on" id="noscript">
+		    <div class="aw-404 aw-404-wrap container">
+		        <p>你的浏览器禁用了JavaScript, 请开启后刷新浏览器获得更好的体验!</p>
+		    </div>
+		</noscript>
+
+		<div class="aw-top-menu-wrap">
+			<div class="container">
+				<!-- logo -->
+				<div class="aw-logo hidden-xs">
+					<a href=""></a>
+				</div>
+				<!-- end logo -->
+				<!-- 搜索框 -->
+				<div class="aw-search-box  hidden-xs hidden-sm">
+					<form class="navbar-search" action="" id="global_search_form" method="post">
+						<input class="form-control search-query" type="text" placeholder="搜索问题、话题或人" autocomplete="off" name="q" id="aw-search-query">
+						<span title="搜索" id="global_search_btns"><i class="icon icon-search"></i></span>
+						<div class="aw-dropdown" style="display: block;">
+							<div class="mod-body">
+								<p class="title">输入关键字进行搜索</p>
+								<ul class="aw-dropdown-list"></ul>
+								<p class="search show"><span>搜索:</span>
+									<a>asdfas </a>
+								</p>
+							</div>
+							<div class="mod-footer">
+								<a href="" class="pull-right btn btn-mini btn-success publish">发起问题</a>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end 搜索框 -->
+				<!-- 导航 -->
+				<div class="aw-top-nav navbar">
+					<div class="navbar-header">
+						<button class="navbar-toggle pull-left">
+					        <span class="icon icon-bar"></span>
+					        <span class="icon icon-bar"></span>
+					        <span class="icon icon-bar"></span>
+			      		</button>
+					</div>
+					<nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href=""><i class="glyphicon glyphicon-comment"></i> 我关注的动态</a>
+							</li>
+							<li>
+								<a href="" class=""><i class="glyphicon glyphicon-globe"></i> 本站动态</a>
+							</li>
+
+							<li>
+								<a href=""><i class="glyphicon glyphicon-align-justify"></i> 模块</a>
+							</li>
+
+						</ul>
+					</nav>
+				</div>
+				<!-- end 导航 -->
+				<!-- 用户栏 -->
+				<div class="aw-user-nav">
+					<!-- 登陆&注册栏 -->
+					<!--登录状态显示-->
+					<!--
+					<a href="" class="aw-user-nav-dropdown">
+						<img alt="Xianmingyuan" src="./img/20_avatar_mid.jpg">
+					</a>
+					<div class="aw-dropdown dropdown-list pull-right">
+						<ul class="aw-dropdown-list">
+							<li>
+								<a href=""><i class="icon icon-inbox"></i> 私信<span class="badge badge-important hide" id="inbox_unread" style="display: none;">0</span></a>
+							</li>
+							<li class="hidden-xs">
+								<a href=""><i class="icon icon-setting"></i> 设置</a>
+							</li>
+							<li>
+								<a href=""><i class="icon icon-logout"></i> 退出</a>
+							</li>
+						</ul>
+					</div>
+					-->
+
+					<!--未登录状态不显示-->
+					<span>
+						<a class="register btn btn-normal btn-success" href="javascript:;" onclick="showRegisterModal()">注册</a>
+						<a class="login btn btn-normal btn-primary" href="javascript:;" onclick="showLoginModal()">登录</a>
+					</span>
+					<!-- end 登陆&注册栏 -->
+				</div>
+				<!-- end 用户栏 -->
+				<!-- 发起 -->
+				<!--登录状态显示-->
+				<!--
+				<div class="aw-publish-btn">
+					<a id="header_publish" href="" class="btn-primary"><i class="icon icon-ask"></i>发起</a>
+					<div class="dropdown-list pull-right">
+						<ul>
+							<li>
+								<a href="">问题</a>
+							</li>
+							<li>
+								<a href="article/">文章</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				-->
+				<!-- end 发起 -->
+			</div>
+		</div>
+
+		<div class="aw-container-wrap">
+
+			<div class="container">
+				<div class="row">
+					<div class="aw-content-wrap clearfix">
+						<div class="col-sm-12 col-md-9 aw-main-content">
+							<!-- 新消息通知 -->
+							<div class="aw-mod aw-notification-box hide" id="index_notification">
+								<div class="mod-head common-head">
+									<h2>
+								<span class="pull-right"><a href="http://wenda.ghostchina.com/setting/privacy/#notifications" class="text-color-999"><i class="icon icon-setting"></i> 通知设置</a></span>
+								<i class="icon icon-bell"></i>新通知<em class="badge badge-important" name="notification_unread_num">0</em>
+							</h2>
+								</div>
+								<div class="mod-body">
+									<ul id="notification_list"></ul>
+								</div>
+								<div class="mod-footer clearfix">
+									<a href="javascript:;" onclick="AWS.Message.read_notification(false, 0, false);" class="pull-left btn btn-mini btn-gray">我知道了</a>
+									<a href="http://wenda.ghostchina.com/notifications/" class="pull-right btn btn-mini btn-success">查看所有</a>
+								</div>
+							</div>
+							<!-- end 新消息通知 -->
+							<!-- tab切换 -->
+							<ul class="nav nav-tabs aw-nav-tabs active hidden-xs">
+								<li>
+									<a href="http://wenda.ghostchina.com/sort_type-unresponsive">等待回复</a>
+								</li>
+								<li>
+									<a href="http://wenda.ghostchina.com/sort_type-hot__day-7" id="sort_control_hot">热门</a>
+								</li>
+								<li>
+									<a href="http://wenda.ghostchina.com/is_recommend-1">推荐</a>
+								</li>
+								<li class="active">
+									<a href="">最新</a>
+								</li>
+
+								<h2 class="hidden-xs"><i class="icon icon-list"></i> 发现</h2>
+							</ul>
+							<!-- end tab切换 -->
+
+							<div class="aw-mod aw-explore-list">
+								<div class="mod-body">
+									<div class="aw-common-list">
+										<div class="aw-item active" data-topic-id="33,">
+											<a class="aw-user-name hidden-xs" data-id="1303" href="http://wenda.ghostchina.com/people/Baseman" rel="nofollow"><img src="img/20_avatar_mid.jpg" alt=""></a>
+											<div class="aw-question-content">
+												<h4>
+													<a href="http://wenda.ghostchina.com/question/544">使用安装集成包 Node.js:201错误</a>
+												</h4>
+												<a href="http://wenda.ghostchina.com/question/544#%21answer_form" class="pull-right text-color-999">回复</a>
+
+												<p>
+													<a class="aw-question-tags" href="http://wenda.ghostchina.com/explore/category-1">默认分类</a>
+													•
+													<a href="http://wenda.ghostchina.com/people/Baseman" class="aw-user-name">Baseman</a>
+													<span class="text-color-999">发起了问题 • 1 人关注 • 0 个回复 • 577 次浏览 • 2016-10-16 18:14 </span>
+													<span class="text-color-999 related-topic hide"> •  来自相关话题</span>
+												</p>
+
+											</div>
+										</div>
+										<div class="aw-item " data-topic-id="71,">
+											<a class="aw-user-name hidden-xs" data-id="371" href="http://wenda.ghostchina.com/people/leoiceo" rel="nofollow"><img src="img/20_avatar_mid.jpg" alt=""></a>
+											<div class="aw-question-content">
+												<h4>
+													<a href="http://wenda.ghostchina.com/question/541">unsupported charset "UTF-8" 升级7.0.4报错</a>
+												</h4>
+												<a href="http://wenda.ghostchina.com/question/541#%21answer_form" class="pull-right text-color-999">回复</a>
+
+												<p>
+													<a class="aw-question-tags" href="http://wenda.ghostchina.com/explore/category-1">默认分类</a>
+													•
+													<a href="http://wenda.ghostchina.com/people/leoiceo" class="aw-user-name" data-id="371">leoiceo</a>
+													<span class="text-color-999">回复了问题 • 3 人关注 • 1 个回复 • 627 次浏览 • 2016-09-12 11:39				</span>
+													<span class="text-color-999 related-topic hide"> •  来自相关话题</span>
+												</p>
+
+											</div>
+										</div>
+										<div>
+											<a class="btn-qq">查看更多</a>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+
+						<!-- 侧边栏 -->
+						<div class="col-sm-12 col-md-3 aw-side-bar hidden-xs hidden-sm">
+							<div class="aw-mod aw-text-align-justify">
+								<div class="mod-head">
+									<a href="http://wenda.ghostchina.com/topic/channel-hot" class="pull-right">更多 &gt;</a>
+									<h3>热门话题</h3>
+								</div>
+								<div class="mod-body">
+									<dl>
+										<dt class="pull-left aw-border-radius-5">
+											<a href="http://wenda.ghostchina.com/topic/ghost%20%E5%AE%89%E8%A3%85"><img alt="" src="img/20_avatar_mid.jpg"></a>
+										</dt>
+										<dd class="pull-left">
+											<p class="clearfix">
+												<span class="topic-tag">
+													<a href="http://wenda.ghostchina.com/topic/ghost%20%E5%AE%89%E8%A3%85" class="text" data-id="38">ghost 安装</a>
+												</span>
+											</p>
+											<p><b>3</b> 个问题, <b>1</b> 人关注</p>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="aw-mod aw-text-align-justify">
+								<div class="mod-head">
+									<a href="http://wenda.ghostchina.com/people/" class="pull-right">更多 &gt;</a>
+									<h3>热门用户</h3>
+								</div>
+								<div class="mod-body">
+
+									<dl>
+										<dt class="pull-left aw-border-radius-5">
+											<a href="http://wenda.ghostchina.com/people/Hitvz"><img alt="" src="img/20_avatar_mid.jpg"></a>
+										</dt>
+										<dd class="pull-left">
+											<a href="http://wenda.ghostchina.com/people/Hitvz" data-id="1421" class="aw-user-name">Hitvz </a>
+											<p class="signature"></p>
+											<p><b>1</b> 个问题, <b>0</b> 次赞同</p>
+										</dd>
+									</dl>
+
+									
+								</div>
+							</div>
+						</div>
+						<!-- end 侧边栏 -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="aw-footer-wrap">
+			<div class="aw-footer">
+				Copyright © 2017<span class="hidden-xs"> - 京ICP备11008151号, All Rights Reserved</span>
+
+				<span class="hide">Powered By <a href="" target="blank">WeCenter 3.0 Beta 2</a></span>
+
+			</div>
+		</div>
+
+		<a class="aw-back-top hidden-xs" href="javascript:;" onclick="$.scrollTo(1, 600, {queue:true});" style="display: block;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+
+		<!-- 注册窗口 -->
+		<div id="register" class="modal fade" tabindex="-1">
+
+			<div class="modal-dialog" style="margin-top: 100px;">
+
+				<div class="modal-content">
+
+					<div class="modal-body">
+						<button class="close" data-dismiss="modal">
+                          <span>&times;</span>
+                      </button> </div>
+
+					<div class="modal-title">
+
+						<h1 class="text-center">注册</h1> </div>
+
+					<div class="modal-body">
+
+						<form class="form-group" action="">
+
+							<div class="form-group">
+								<label for="">用户名</label> <input class="form-control" type="text" placeholder="6-15位字母或数字"> </div>
+
+							<div class="form-group">
+								<label for="">密码</label> <input class="form-control" type="password" placeholder="至少6位字母或数字"> </div>
+
+							<div class="form-group">
+								<label for="">再次输入密码</label> <input class="form-control" type="password" placeholder="至少6位字母或数字"> </div>
+
+							<div class="form-group">
+								<label for="">邮箱</label> <input class="form-control" type="email" placeholder="例如:123@123.com"> </div>
+
+							<div class="text-right">
+								<button class="btn btn-primary" type="submit">提交</button> <button class="btn btn-danger" data-dismiss="modal">取消</button> </div>
+
+							<a href="" data-toggle="modal" data-dismiss="modal" data-target="#login">已有账号？点我登录</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 登录窗口 -->
+		<div id="login" class="modal fade">
+
+			<div class="modal-dialog" style="margin-top: 100px;">
+
+				<div class="modal-content">
+
+					<div class="modal-body">
+						<button class="close" data-dismiss="modal">
+                         <span>&times;</span>
+                     </button> </div>
+
+					<div class="modal-title">
+
+						<h1 class="text-center">登录</h1> </div>
+
+					<div class="modal-body">
+
+						<form class="form-group" action="">
+
+							<div class="form-group">
+								<label for="">用户名</label> <input class="form-control" type="text" placeholder=""> </div>
+
+							<div class="form-group">
+								<label for="">密码</label> <input class="form-control" type="password" placeholder=""> </div>
+
+							<div class="text-right">
+								<button class="btn btn-primary" type="submit">登录</button> <button class="btn btn-danger" data-dismiss="modal">取消</button> </div>
+
+							<a href="" data-toggle="modal" data-dismiss="modal" data-target="#register">还没有账号？点我注册</a>
+						</form>
+					</div>
+					<h6 class="h-society-line">社交账号登录</h6>
+					<ul>
+						<li>
+							<a class="weixin"><i class="glyphicon glyphicon-apple"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+	</body>
+
+</html>

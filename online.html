@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+
+		<title></title>
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+	</head>
+
+	<body>
+		<noscript unselectable="on" id="noscript">
+		    <div class="aw-404 aw-404-wrap container">
+		        <p>你的浏览器禁用了JavaScript, 请开启后刷新浏览器获得更好的体验!</p>
+		    </div>
+		</noscript>
+
+		<div class="aw-top-menu-wrap">
+			<div class="container">
+				<!-- logo -->
+				<div class="aw-logo hidden-xs">
+					<a href=""></a>
+				</div>
+				<!-- end logo -->
+				<!-- 搜索框 -->
+				<div class="aw-search-box  hidden-xs hidden-sm">
+					<form class="navbar-search" action="" id="global_search_form" method="post">
+						<input class="form-control search-query" type="text" placeholder="搜索问题、话题或人" autocomplete="off" name="q" id="aw-search-query">
+						<span title="搜索" id="global_search_btns"><i class="icon icon-search"></i></span>
+						<div class="aw-dropdown" style="display: block;">
+							<div class="mod-body">
+								<p class="title">输入关键字进行搜索</p>
+								<ul class="aw-dropdown-list show"></ul>
+								<p class="search show"><span>搜索:</span>
+									<a>asdfas </a>
+								</p>
+							</div>
+							<div class="mod-footer">
+								<a href="" class="pull-right btn btn-mini btn-success publish">发起问题</a>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end 搜索框 -->
+				<!-- 导航 -->
+				<div class="aw-top-nav navbar">
+					<div class="navbar-header">
+						<button class="navbar-toggle pull-left">
+					        <span class="icon icon-bar"></span>
+					        <span class="icon icon-bar"></span>
+					        <span class="icon icon-bar"></span>
+			      		</button>
+					</div>
+					<nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href=""><i class="glyphicon glyphicon-comment"></i> 我关注的动态</a>
+							</li>
+							<li>
+								<a href="" class=""><i class="glyphicon glyphicon-globe"></i> 本站动态</a>
+							</li>
+
+							<li>
+								<a href=""><i class="glyphicon glyphicon-align-justify"></i> 模块</a>
+							</li>
+
+						</ul>
+					</nav>
+				</div>
+
+				<div class="aw-user-nav">
+
+					<a href="" class="aw-user-nav-dropdown">
+						<img alt="Xianmingyuan" src="./img/20_avatar_mid.jpg">
+					</a>
+					<div class="aw-dropdown dropdown-list pull-right">
+						<ul class="aw-dropdown-list">
+							<li>
+								<a href=""><i class="glyphicon glyphicon-envelope"></i> 私信<span class="badge badge-important hide" id="inbox_unread" style="display: none;">0</span></a>
+							</li>
+							<li class="hidden-xs">
+								<a href=""><i class="glyphicon glyphicon-cog"></i> 设置</a>
+							</li>
+							<li>
+								<a href=""><i class="glyphicon glyphicon-off"></i> 退出</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="aw-publish-btn">
+					<a id="header_publish" href="" class="btn-primary"><i class="glyphicon glyphicon-edit"></i>发起</a>
+					<div class="dropdown-list pull-right">
+						<ul>
+							<li>
+								<a href="">问题</a>
+							</li>
+							<li>
+								<a href="article/">文章</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="aw-container-wrap">
+
+		</div>
+
+		<div class="aw-footer-wrap">
+			<div class="aw-footer">
+				Copyright © 2017<span class="hidden-xs"> - 京ICP备11008151号, All Rights Reserved</span>
+
+				<span class="hide">Powered By <a href="" target="blank">WeCenter 3.0 Beta 2</a></span>
+
+			</div>
+		</div>
+
+		<a class="aw-back-top hidden-xs" href="javascript:;" onclick="$.scrollTo(1, 600, {queue:true});" style="display: block;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+
+		<!-- 注册窗口 -->
+
+		<div id="register" class="modal fade" tabindex="-1">
+
+			<div class="modal-dialog" style="margin-top: 100px;">
+
+				<div class="modal-content">
+
+					<div class="modal-body">
+						<button class="close" data-dismiss="modal">
+                          <span>&times;</span>
+                      </button> </div>
+
+					<div class="modal-title">
+
+						<h1 class="text-center">注册</h1> </div>
+
+					<div class="modal-body">
+
+						<form class="form-group" action="">
+
+							<div class="form-group">
+								<label for="">用户名</label> <input class="form-control" type="text" placeholder="6-15位字母或数字"> </div>
+
+							<div class="form-group">
+								<label for="">密码</label> <input class="form-control" type="password" placeholder="至少6位字母或数字"> </div>
+
+							<div class="form-group">
+								<label for="">再次输入密码</label> <input class="form-control" type="password" placeholder="至少6位字母或数字"> </div>
+
+							<div class="form-group">
+								<label for="">邮箱</label> <input class="form-control" type="email" placeholder="例如:123@123.com"> </div>
+
+							<div class="text-right">
+								<button class="btn btn-primary" type="submit">提交</button> <button class="btn btn-danger" data-dismiss="modal">取消</button> </div>
+
+							<a href="" data-toggle="modal" data-dismiss="modal" data-target="#login">已有账号？点我登录</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 登录窗口 -->
+
+		<div id="login" class="modal fade">
+
+			<div class="modal-dialog" style="margin-top: 100px;">
+
+				<div class="modal-content">
+
+					<div class="modal-body">
+						<button class="close" data-dismiss="modal">
+                         <span>&times;</span>
+                     </button> </div>
+
+					<div class="modal-title">
+
+						<h1 class="text-center">登录</h1> </div>
+
+					<div class="modal-body">
+
+						<form class="form-group" action="">
+
+							<div class="form-group">
+								<label for="">用户名</label> <input class="form-control" type="text" placeholder=""> </div>
+
+							<div class="form-group">
+								<label for="">密码</label> <input class="form-control" type="password" placeholder=""> </div>
+
+							<div class="text-right">
+								<button class="btn btn-primary" type="submit">登录</button> <button class="btn btn-danger" data-dismiss="modal">取消</button> </div>
+
+							<a href="" data-toggle="modal" data-dismiss="modal" data-target="#register">还没有账号？点我注册</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+	</body>
+
+</html>
